@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Salário PJ Correto — Quanto Cobrar como PJ</title>
+<meta name="description" content="Calcule exatamente quanto cobrar como PJ sem perder dinheiro. Some 13°, férias, FGTS, benefícios e custos operacionais. Gere um PDF profissional para sua negociação salarial.">
+<meta name="keywords" content="calculadora salário PJ, quanto cobrar PJ, CLT vs PJ, salário PJ correto, converter salário CLT para PJ">
+<meta name="author" content="SalarioPJ.com.br">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://salariopj.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://salariopj.com.br/">
+<meta property="og:title" content="Calculadora Salário PJ Correto — Quanto Cobrar como PJ">
+<meta property="og:description" content="Descubra o valor mínimo para negociar como PJ. Ferramenta gratuita com cálculo completo.">
+<meta property="og:image" content="https://salariopj.com.br/og-image.png">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="SalarioPJ.com.br">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora Salário PJ Correto">
+<meta name="twitter:description" content="Quanto você deve cobrar como PJ? Calcule agora, grátis.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Calculadora Salário PJ Correto","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"description":"Calcule quanto cobrar como PJ considerando todos os encargos e benefícios equivalentes ao CLT.","url":"https://salariopj.com.br","inLanguage":"pt-BR"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Como calcular o salário correto como PJ?","acceptedAnswer":{"@type":"Answer","text":"Some seu salário bruto CLT com todos os benefícios, 13°÷12, férias+1/3÷12, FGTS (8%), reajuste anual e seus custos operacionais como PJ."}},{"@type":"Question","name":"Quanto a mais devo cobrar como PJ?","acceptedAnswer":{"@type":"Answer","text":"Em geral entre 40% e 80% a mais que o salário bruto CLT, dependendo dos benefícios e custos operacionais."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#faf8f3; --cream2:#f3f0e8; --cream3:#ede9de;
+  --amber:#c97d2a; --amber-l:#f5e6cc; --amber-d:#92400e;
+  --green:#2d6a4f; --green-l:#d8f0e6; --green-d:#1a4034;
+  --terra:#c1694f; --terra-l:#faeae6;
+  --ink:#1c1917; --ink2:#44403c; --ink3:#78716c;
+  --border:#e5e0d5; --border2:#d5cfc2;
+  --white:#ffffff;
+  --shadow:0 2px 12px rgba(28,25,23,0.07);
+  --shadow2:0 6px 28px rgba(28,25,23,0.11);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;}
+
+.disc-banner{background:var(--amber-l);border-bottom:1px solid #e8d5ab;padding:9px 2.5rem 9px 1rem;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--amber-d);line-height:1.4;position:relative;flex-wrap:wrap;text-align:center;}
+.disc-banner a{color:var(--amber);font-weight:500;text-decoration:underline;cursor:pointer;}
+.disc-close{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--amber-d);font-size:18px;line-height:1;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%;opacity:0.55;}
+.disc-close:hover{opacity:1;background:rgba(0,0,0,0.06);}
+
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 1rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 15% 90%,rgba(201,125,42,0.07) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 85% 10%,rgba(45,106,79,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-icon{display:inline-flex;align-items:center;justify-content:center;width:60px;height:60px;background:var(--amber-l);border-radius:18px;margin-bottom:1rem;position:relative;box-shadow:0 4px 16px rgba(201,125,42,0.18);}
+.hero h1{font-family:'Outfit',sans-serif;font-size:26px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:8px;position:relative;}
+.hero h1 span{color:var(--amber);}
+.hero p{font-size:15px;color:var(--ink3);max-width:400px;margin:0 auto;line-height:1.6;position:relative;}
+.hero-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:1rem;position:relative;}
+.pill{font-size:11px;font-weight:500;padding:4px 11px;border-radius:99px;background:var(--cream2);color:var(--ink2);border:1px solid var(--border);}
+.pill.green{background:var(--green-l);color:var(--green-d);border-color:#a8d8c0;}
+.pill.amber{background:var(--amber-l);color:var(--amber-d);border-color:#e8c88a;}
+
+.wrap{max-width:620px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+
+.progress-section{display:flex;align-items:stretch;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:1rem;}
+.prog-block{flex:1;padding:16px 14px;text-align:center;}
+.prog-block:first-child{background:var(--cream2);}
+.prog-block:last-child{background:var(--green-l);}
+.prog-label{font-size:11px;color:var(--ink3);font-weight:500;margin-bottom:5px;}
+.prog-value{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;}
+.prog-value.amber{color:var(--amber);}
+.prog-value.green{color:var(--green);}
+.prog-arrow{width:50px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:var(--white);border-left:1px solid var(--border);border-right:1px solid var(--border);padding:8px 0;}
+.prog-pct{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;color:var(--amber-d);line-height:1;}
+.prog-pct-label{font-size:9px;color:var(--ink3);line-height:1;}
+
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.4rem 1.5rem;margin-bottom:1rem;box-shadow:var(--shadow);transition:box-shadow 0.2s;position:relative;overflow:hidden;}
+.card:hover{box-shadow:var(--shadow2);}
+.card-deco{position:absolute;right:-6px;top:-6px;opacity:0.13;pointer-events:none;}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem;}
+.card-icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.card-icon.a{background:var(--amber-l);}
+.card-icon.g{background:var(--green-l);}
+.card-icon.t{background:var(--terra-l);}
+.card-title{font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;color:var(--ink2);}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field-row{display:flex;align-items:center;gap:5px;margin-bottom:5px;}
+.field-row label{font-size:12.5px;color:var(--ink3);font-weight:500;}
+.info-btn{width:15px;height:15px;border-radius:50%;border:1px solid var(--border2);background:var(--cream2);color:var(--ink3);font-size:9px;font-style:italic;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s;}
+.info-btn:hover{background:var(--amber-l);color:var(--amber-d);border-color:#e8c88a;}
+.tooltip{display:none;font-size:12px;color:var(--ink2);background:var(--cream2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-top:4px;line-height:1.55;animation:fadeIn 0.15s ease;}
+.tooltip.open{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+.input-wrap{position:relative;}
+.input-wrap .sym{position:absolute;top:50%;transform:translateY(-50%);font-size:13px;color:var(--ink3);font-weight:500;pointer-events:none;}
+.input-wrap .sym.left{left:10px;}
+.input-wrap .sym.right{right:10px;}
+input[type=number]{width:100%;padding:9px 10px 9px 26px;font-size:15px;font-family:'DM Sans',sans-serif;border:1.5px solid var(--border);border-radius:10px;background:var(--cream);color:var(--ink);-moz-appearance:textfield;transition:border-color 0.15s,box-shadow 0.15s;}
+input[type=number].pct-input{padding:9px 26px 9px 10px;}
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
+input[type=number]:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(201,125,42,0.12);background:var(--white);}
+
+.result-card{position:relative;overflow:hidden;}
+.wm-text{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+.wm-text::before,.wm-text::after{content:"SalarioPJ.com.br  •  SalarioPJ.com.br  •  SalarioPJ.com.br  •  SalarioPJ.com.br  •  SalarioPJ.com.br";position:absolute;left:-20%;width:140%;font-size:10.5px;font-weight:700;color:rgba(201,125,42,0.08);letter-spacing:0.1em;text-transform:uppercase;transform:rotate(-22deg);white-space:nowrap;user-select:none;pointer-events:none;font-family:'Outfit',sans-serif;}
+.wm-text::before{top:35%;}
+.wm-text::after{top:62%;}
+.breakdown-wrap{position:relative;z-index:2;}
+.breakdown{width:100%;border-collapse:collapse;font-size:13px;}
+.breakdown td{padding:6px 4px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:middle;}
+.breakdown td:last-child{text-align:right;font-weight:500;white-space:nowrap;}
+.breakdown .sub td{color:var(--ink3);font-size:12.5px;}
+.breakdown .sub td:first-child{padding-left:16px;}
+.breakdown .total td{font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;border-top:2px solid var(--border2);border-bottom:none;padding-top:10px;}
+.breakdown .total .gv{color:var(--green);}
+.tip-box{background:#eff8ff;border-left:3px solid #7bb8e8;border-radius:0 10px 10px 0;padding:9px 12px;margin-top:12px;font-size:12.5px;color:#1e4976;line-height:1.55;position:relative;z-index:2;}
+
+.pdf-box{background:linear-gradient(135deg,#fffbf0 0%,#fff7e8 100%);border:1.5px solid #e8c878;border-radius:16px;padding:1.5rem;margin-top:1rem;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(201,125,42,0.10);}
+.pdf-box::before{content:'';position:absolute;top:-40px;right:-40px;width:140px;height:140px;background:radial-gradient(circle,rgba(201,125,42,0.10) 0%,transparent 70%);pointer-events:none;}
+.pdf-box::after{content:'';position:absolute;bottom:-30px;left:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(45,106,79,0.07) 0%,transparent 70%);pointer-events:none;}
+.pdf-box-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--amber-d);margin-bottom:6px;}
+.pdf-box-sub{font-size:13px;color:#78350f;margin-bottom:1rem;line-height:1.6;}
+.pdf-includes{margin-bottom:1rem;}
+.pdf-includes-label{font-size:11px;font-weight:600;color:var(--amber-d);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.05em;}
+.pdf-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.pdf-item{display:flex;gap:7px;align-items:flex-start;font-size:12px;color:#78350f;line-height:1.4;background:rgba(255,255,255,0.65);border-radius:8px;padding:7px 9px;border:1px solid rgba(232,200,120,0.45);}
+.pdf-check{width:16px;height:16px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pdf-btn{width:100%;padding:14px;background:var(--amber);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;transition:background 0.15s,transform 0.1s,box-shadow 0.15s;box-shadow:0 4px 16px rgba(201,125,42,0.28);position:relative;}
+.pdf-btn:hover{background:var(--amber-d);box-shadow:0 6px 22px rgba(201,125,42,0.33);}
+.pdf-btn:active{transform:scale(0.99);}
+.pdf-price{font-size:12px;color:#92400e;text-align:center;margin-top:8px;}
+
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(28,25,23,0.5);z-index:200;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(2px);}
+.modal-bg.open{display:flex;}
+.modal{background:var(--white);border-radius:16px;padding:1.75rem;max-width:480px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(28,25,23,0.20);}
+.modal h2{font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:1rem;}
+.modal p{font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:0.75rem;}
+.modal-close{margin-top:1rem;width:100%;padding:11px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.modal-close:hover{background:var(--ink2);}
+
+.footer{text-align:center;font-size:11.5px;color:var(--ink3);margin-top:2.5rem;line-height:1.7;padding-bottom:2rem;}
+.footer strong{color:var(--ink2);font-weight:600;}
+.footer a{color:var(--ink3);text-decoration:underline;cursor:pointer;}
+
+@keyframes slideUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.progress-section{animation:slideUp 0.35s ease both 0.05s;}
+.card:nth-of-type(1){animation:slideUp 0.35s ease both 0.10s;}
+.card:nth-of-type(2){animation:slideUp 0.35s ease both 0.15s;}
+.card:nth-of-type(3){animation:slideUp 0.35s ease both 0.20s;}
+.card:nth-of-type(4){animation:slideUp 0.35s ease both 0.25s;}
+.pdf-box{animation:slideUp 0.35s ease both 0.30s;}
+</style>
+</head>
+<body>
+
+<div class="disc-banner" id="disc-banner">
+  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" style="flex-shrink:0"><circle cx="7" cy="7" r="6.5" stroke="#b45309" stroke-width="1"/><rect x="6.3" y="5.5" width="1.4" height="5" rx="0.7" fill="#b45309"/><rect x="6.3" y="3.5" width="1.4" height="1.4" rx="0.7" fill="#b45309"/></svg>
+  Ferramenta informativa — valores são estimativas.
+  <a onclick="openModal()">Leia o aviso completo.</a>
+  Consulte sempre um contador ou advogado trabalhista.
+  <button class="disc-close" onclick="document.getElementById('disc-banner').style.display='none'" title="Fechar">×</button>
+</div>
+
+<div class="hero">
+  <div class="hero-icon">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <rect x="6" y="3" width="16" height="22" rx="3.5" fill="#f5e6cc" stroke="#c97d2a" stroke-width="1.5"/>
+      <path d="M10 10h10M10 14h10M10 18h6" stroke="#c97d2a" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="22" cy="22" r="7" fill="#2d6a4f"/>
+      <path d="M19.5 22l2 2 3.5-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <h1>Calculadora <span>Salário PJ</span> Correto</h1>
+  <p>Descubra exatamente quanto cobrar como PJ para não perder dinheiro na negociação</p>
+  <div class="hero-pills">
+    <span class="pill">Gratuito</span>
+    <span class="pill amber">Cálculo completo</span>
+    <span class="pill green">PDF de negociação</span>
+    <span class="pill">Sem cadastro</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="progress-section">
+    <div class="prog-block">
+      <div class="prog-label">Seu pacote CLT equivale a</div>
+      <div class="prog-value amber" id="r-clt">—</div>
+    </div>
+    <div class="prog-arrow">
+      <svg width="16" height="12" viewBox="0 0 18 14" fill="none"><path d="M1 7h14M11 2l5 5-5 5" stroke="#c97d2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="prog-pct" id="prog-pct">—</div>
+      <div class="prog-pct-label">a mais</div>
+    </div>
+    <div class="prog-block">
+      <div class="prog-label">Você deve pedir como PJ</div>
+      <div class="prog-value green" id="r-pj">—</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <svg class="card-deco" width="72" height="72" viewBox="0 0 72 72"><circle cx="12" cy="12" r="3" fill="#c97d2a"/><circle cx="36" cy="12" r="3" fill="#c97d2a"/><circle cx="60" cy="12" r="3" fill="#c97d2a"/><circle cx="12" cy="36" r="3" fill="#c97d2a"/><circle cx="36" cy="36" r="3" fill="#c97d2a"/><circle cx="60" cy="36" r="3" fill="#c97d2a"/><circle cx="12" cy="60" r="3" fill="#c97d2a"/><circle cx="36" cy="60" r="3" fill="#c97d2a"/><circle cx="60" cy="60" r="3" fill="#c97d2a"/></svg>
+    <div class="card-header">
+      <div class="card-icon a"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v14M5.5 5.5C5.5 4.1 7.1 3 9 3s3.5 1.1 3.5 2.5S10.9 8 9 8 5.5 9.1 5.5 10.5 7.1 13 9 13s3.5-1.1 3.5-2.5" stroke="#c97d2a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="card-title">Salário e benefícios CLT</div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <div class="field-row"><label>Salário bruto</label><span class="info-btn" onclick="toggle('t-sal')">i</span></div>
+        <div class="tooltip" id="t-sal">Seu salário bruto antes do desconto do INSS e IR. É a base de todos os cálculos.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="salario" value="5000" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>Vale alimentação</label><span class="info-btn" onclick="toggle('t-va')">i</span></div>
+        <div class="tooltip" id="t-va">Como PJ você paga do próprio bolso. Precisa estar embutido no seu valor mensal.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="va" value="700" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>Vale transporte</label><span class="info-btn" onclick="toggle('t-vt')">i</span></div>
+        <div class="tooltip" id="t-vt">Como PJ não existe VT. Você arca com todo o custo de deslocamento.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="vt" value="340" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>Plano de saúde</label><span class="info-btn" onclick="toggle('t-ps')">i</span></div>
+        <div class="tooltip" id="t-ps">Como PJ você paga integralmente — plano individual costuma ser mais caro que o empresarial.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="ps" value="400" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>PLR / distribuição</label><span class="info-btn" onclick="toggle('t-plr')">i</span></div>
+        <div class="tooltip" id="t-plr">Participação nos lucros anual dividida por 12. Se sua empresa não paga PLR, deixe zero.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="plr" value="0" oninput="calc()"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon g"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3l1.8 3.6 4 .6-2.9 2.8.7 4L9 12l-3.6 1.9.7-4L3.2 7.2l4-.6L9 3z" stroke="#2d6a4f" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+      <div class="card-title">Direitos CLT que somam ao seu valor PJ</div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <div class="field-row"><label>Reajuste anual</label><span class="info-btn" onclick="toggle('t-ipca')">i</span></div>
+        <div class="tooltip" id="t-ipca">No CLT você tem reajuste garantido. Como PJ precisa estar em contrato. Use IPCA + X%: áreas técnicas negociam 4–8%, áreas escassas chegam a 12%. Sem isso você perde poder de compra todo ano.</div>
+        <div class="input-wrap"><input type="number" id="ipca" value="6" oninput="calc()" class="pct-input"><span class="sym right">%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon t"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5.5" width="14" height="10" rx="2.5" stroke="#c1694f" stroke-width="1.5"/><path d="M6 5.5V4.5a3 3 0 0 1 6 0v1" stroke="#c1694f" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10.5" r="1.5" fill="#c1694f"/></svg></div>
+      <div class="card-title">Seus custos operacionais como PJ</div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <div class="field-row"><label>DAS / Simples</label><span class="info-btn" onclick="toggle('t-das')">i</span></div>
+        <div class="tooltip" id="t-das">Imposto mensal do MEI (~R$ 75 fixo) ou do Simples Nacional (varia por faturamento e atividade). Consulte seu contador para o valor exato.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="das" value="180" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>Contador</label><span class="info-btn" onclick="toggle('t-cont')">i</span></div>
+        <div class="tooltip" id="t-cont">MEI pode dispensar contador, mas para ME/EPP é obrigatório. Valores típicos: R$ 150–350/mês.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="contador" value="200" oninput="calc()"></div>
+      </div>
+      <div class="field">
+        <div class="field-row"><label>Aluguel virtual</label><span class="info-btn" onclick="toggle('t-alug')">i</span></div>
+        <div class="tooltip" id="t-alug">Nem sempre é possível abrir empresa no endereço residencial. Endereço virtual (fiscal) resolve isso. Serviços como Regus e WeWork oferecem por R$ 80–150/mês. Se não for o seu caso, deixe zero.</div>
+        <div class="input-wrap"><span class="sym left">R$</span><input type="number" id="aluguel" value="0" oninput="calc()"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card result-card">
+    <div class="wm-text"></div>
+    <div class="card-header" style="position:relative;z-index:2">
+      <div class="card-icon g"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="card-title">Detalhamento completo</div>
+    </div>
+    <div class="breakdown-wrap">
+      <table class="breakdown">
+        <tr><td>Salário bruto CLT</td><td id="b-sal">—</td></tr>
+        <tr class="sub"><td>+ Vale alimentação</td><td id="b-va">—</td></tr>
+        <tr class="sub"><td>+ Vale transporte</td><td id="b-vt">—</td></tr>
+        <tr class="sub"><td>+ Plano de saúde</td><td id="b-ps">—</td></tr>
+        <tr class="sub"><td>+ PLR ÷ 12</td><td id="b-plr">—</td></tr>
+        <tr class="sub"><td>+ 13° ÷ 12</td><td id="b-13">—</td></tr>
+        <tr class="sub"><td>+ Férias + 1/3 ÷ 12</td><td id="b-fer">—</td></tr>
+        <tr class="sub"><td>+ FGTS (8%)</td><td id="b-fgts">—</td></tr>
+        <tr class="sub"><td>+ Reajuste anual embutido</td><td id="b-ipca">—</td></tr>
+        <tr class="sub"><td>+ DAS / Simples</td><td id="b-das">—</td></tr>
+        <tr class="sub"><td>+ Contador</td><td id="b-cont">—</td></tr>
+        <tr class="sub"><td>+ Aluguel virtual</td><td id="b-alug">—</td></tr>
+        <tr class="total"><td>= Mínimo para negociar</td><td class="gv" id="b-total">—</td></tr>
+      </table>
+      <div class="tip-box" id="tip-pct"></div>
+    </div>
+  </div>
+
+  <div class="pdf-box">
+    <div class="pdf-box-title">📄 Leve esse número com autoridade</div>
+    <div class="pdf-box-sub">Gere um PDF profissional com seu racional completo, pronto para enviar por e-mail ou apresentar pessoalmente. <strong>Quem chega com documento, negocia melhor.</strong></div>
+    <div class="pdf-includes">
+      <div class="pdf-includes-label">O que está no PDF</div>
+      <div class="pdf-grid">
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Tabela com seus cálculos personalizados</span></div>
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Cláusula de multa rescisória (R$ 12.500)</span></div>
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Itens recomendados para o contrato PJ</span></div>
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Argumento sobre encargos do contratante</span></div>
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Explicação de cada item — defenda seus números</span></div>
+        <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Layout profissional com valor final destacado</span></div>
+      </div>
+    </div>
+    <button class="pdf-btn" onclick="alert('Pagamento — R$ 9,90 via Pix ou cartão')">Gerar meu PDF de negociação — R$ 9,90</button>
+    <p class="pdf-price">Pagamento único · Recebe na hora · Sem cadastro necessário</p>
+  </div>
+
+  <div class="footer">
+    <strong>SalarioPJ.com.br</strong><br>
+    Ferramenta educativa e informativa. Consulte sempre um contador ou advogado trabalhista.<br>
+    <a onclick="openModal()">Aviso legal completo</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:sdlucaslima92+salariopj@gmail.com" style="color:var(--ink3);text-decoration:underline;">sdlucaslima92+salariopj@gmail.com</a>
+  </div>
+</div>
+
+<div class="modal-bg" id="modal-disclaimer">
+  <div class="modal">
+    <h2>Aviso Legal — Isenção de Responsabilidade</h2>
+    <p><strong>Caráter informativo:</strong> Esta calculadora tem finalidade exclusivamente educativa e informativa. Os valores apresentados são estimativas baseadas em fórmulas gerais e não constituem assessoria contábil, jurídica ou financeira.</p>
+    <p><strong>Variações individuais:</strong> Cada situação trabalhista é única. Alíquotas de impostos, enquadramento tributário, benefícios e condições contratuais variam conforme o caso. Os resultados podem não refletir sua situação específica.</p>
+    <p><strong>Sem vínculo profissional:</strong> O uso desta calculadora não estabelece qualquer relação de prestação de serviços contábeis, jurídicos ou de consultoria entre o usuário e os desenvolvedores.</p>
+    <p><strong>Recomendação:</strong> Antes de usar os valores desta calculadora em qualquer negociação, consulte um contador habilitado pelo CRC e/ou um advogado especializado em direito trabalhista.</p>
+    <p><strong>Isenção de responsabilidade:</strong> Os desenvolvedores não se responsabilizam por quaisquer perdas, danos ou resultados de negociações baseados nas informações aqui apresentadas.</p>
+    <p><strong>Legislação:</strong> As fórmulas são baseadas na legislação trabalhista brasileira vigente na data de desenvolvimento, podendo estar desatualizadas. Verifique sempre a legislação atual.</p>
+    <button class="modal-close" onclick="closeModal()">Entendi</button>
+  </div>
+</div>
+
+<script>
+function toggle(id){document.getElementById(id).classList.toggle('open');}
+function openModal(){document.getElementById('modal-disclaimer').classList.add('open');}
+function closeModal(){document.getElementById('modal-disclaimer').classList.remove('open');}
+document.getElementById('modal-disclaimer').addEventListener('click',function(e){if(e.target===this)closeModal();});
+function fmt(n){return'R$ '+Math.round(n).toLocaleString('pt-BR');}
+function calc(){
+  var sal=parseFloat(document.getElementById('salario').value)||0;
+  var va=parseFloat(document.getElementById('va').value)||0;
+  var vt=parseFloat(document.getElementById('vt').value)||0;
+  var ps=parseFloat(document.getElementById('ps').value)||0;
+  var plr=parseFloat(document.getElementById('plr').value)||0;
+  var ipca=parseFloat(document.getElementById('ipca').value)||0;
+  var das=parseFloat(document.getElementById('das').value)||0;
+  var cont=parseFloat(document.getElementById('contador').value)||0;
+  var alug=parseFloat(document.getElementById('aluguel').value)||0;
+  var dec=sal/12,fer=(sal/12)*(4/3),fgts=sal*0.08,iv=sal*(ipca/100)/12;
+  var clt=sal+va+vt+ps+plr+dec+fer+fgts+iv;
+  var tot=clt+das+cont+alug;
+  var pct=sal>0?Math.round(((tot-sal)/sal)*100):0;
+  var enc=Math.round(sal*0.28);
+  document.getElementById('r-clt').textContent=fmt(clt);
+  document.getElementById('r-pj').textContent=fmt(tot);
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('b-sal').textContent=fmt(sal);
+  document.getElementById('b-va').textContent=fmt(va);
+  document.getElementById('b-vt').textContent=fmt(vt);
+  document.getElementById('b-ps').textContent=fmt(ps);
+  document.getElementById('b-plr').textContent=fmt(plr);
+  document.getElementById('b-13').textContent=fmt(dec);
+  document.getElementById('b-fer').textContent=fmt(fer);
+  document.getElementById('b-fgts').textContent=fmt(fgts);
+  document.getElementById('b-ipca').textContent=fmt(iv);
+  document.getElementById('b-das').textContent=fmt(das);
+  document.getElementById('b-cont').textContent=fmt(cont);
+  document.getElementById('b-alug').textContent=fmt(alug);
+  document.getElementById('b-total').textContent=fmt(tot);
+  document.getElementById('tip-pct').textContent='Seu PJ precisa ser '+pct+'% maior que seu salário bruto para você não perder dinheiro. Se o contratante achar muito, lembre-o que ele deixa de pagar aproximadamente R$ '+enc.toLocaleString('pt-BR')+'/mês em encargos patronais.';
+}
+calc();
+</script>
+</body>
+</html>
