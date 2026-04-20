@@ -308,7 +308,7 @@ input[type=number]:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0
         <div class="pdf-item"><div class="pdf-check"><svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Layout profissional com valor final destacado</span></div>
       </div>
     </div>
-    <button class="pdf-btn" onclick="alert('Pagamento — R$ 9,90 via Pix ou cartão')">Gerar meu PDF de negociação — R$ 9,90</button>
+    <button class="pdf-btn" onclick="gerarPagamento()">Gerar meu PDF de negociação — R$ 9,90</button>
     <p class="pdf-price">Pagamento único · Recebe na hora · Sem cadastro necessário</p>
   </div>
 
@@ -372,6 +372,41 @@ function calc(){
   document.getElementById('b-alug').textContent=fmt(alug);
   document.getElementById('b-total').textContent=fmt(tot);
   document.getElementById('tip-pct').textContent='Seu PJ precisa ser '+pct+'% maior que seu salário bruto para você não perder dinheiro. Se o contratante achar muito, lembre-o que ele deixa de pagar aproximadamente R$ '+enc.toLocaleString('pt-BR')+'/mês em encargos patronais.';
+}
+async function gerarPagamento() {
+  const btn = document.querySelector('.pdf-btn');
+  btn.textContent = 'Aguarde...';
+  btn.disabled = true;
+  try {
+    const dados = {
+      salario:  parseFloat(document.getElementById('salario').value)  || 0,
+      va:       parseFloat(document.getElementById('va').value)       || 0,
+      vt:       parseFloat(document.getElementById('vt').value)       || 0,
+      ps:       parseFloat(document.getElementById('ps').value)       || 0,
+      plr:      parseFloat(document.getElementById('plr').value)      || 0,
+      ipca:     parseFloat(document.getElementById('ipca').value)     || 0,
+      das:      parseFloat(document.getElementById('das').value)      || 0,
+      contador: parseFloat(document.getElementById('contador').value) || 0,
+      aluguel:  parseFloat(document.getElementById('aluguel').value)  || 0,
+    };
+    const resp = await fetch('https://servidor-salariopj.onrender.com/criar-pagamento', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados),
+    });
+    const data = await resp.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert('Erro ao gerar pagamento. Tente novamente.');
+      btn.textContent = 'Gerar meu PDF de negociação — R$ 9,90';
+      btn.disabled = false;
+    }
+  } catch(e) {
+    alert('Erro de conexão. Tente novamente em instantes.');
+    btn.textContent = 'Gerar meu PDF de negociação — R$ 9,90';
+    btn.disabled = false;
+  }
 }
 calc();
 </script>
